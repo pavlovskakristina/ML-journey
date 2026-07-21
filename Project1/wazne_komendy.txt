@@ -1,0 +1,42 @@
+# Aktywacja
+conda activate /nazwa/nazwa/Desktop/DS_ML/udemyDS/env
+(pojawia się wtedy (/nazwa/nazwa/Desktop/DS_ML/udemyDS/env) zamiast base)
+
+# Dezaktywacja (wróć do base)
+conda deactivate
+
+# Sprawdź co jest zainstalowane
+conda list
+
+# Doinstaluj coś później
+conda install nazwa_biblioteki
+# lub
+pip install nazwa_biblioteki
+
+
+
+# Jeśli chcesz uruchomić Jupyter Notebook w tym środowisku, to po aktywacji po prostu:
+jupyter notebook
+#lub jeśli nie ma jeszcze Jupytera w tym env:
+conda install jupyter
+
+
+#Nie pushujemy env na github!
+1. Dodaj env do .gitignore
+echo "env/" >> .gitignore
+
+2. Wygeneruj environment.yml — to jest właściwy sposób dzielenia się środowiskiem
+conda env export --from-history > environment.yml
+(Flaga --from-history eksportuje tylko to co ręcznie zainstalowałaś, nie całe drzewo zależności.)
+
+Ten plik zawiera tylko listę bibliotek, nie sam kod. Ktoś inny (lub Ty na innym komputerze) odtworzy środowisko przez:
+conda env create -f environment.yml
+
+
+
+conda env create --file environment.yml --name env_from_file
+To polecenie odtwarza środowisko z pliku environment.yml i nadaje mu nazwę env_from_file.
+
+Czyli odwrotność eksportu:
+export  →  environment.yml  (środowisko → plik)
+create  →  środowisko       (plik → środowisko)
