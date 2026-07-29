@@ -1,0 +1,10 @@
+name: /Users/kristinapavlovska/Desktop/DS_ML/ML-journey/Project3/env
+channels:
+  - defaults
+dependencies:
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - jupyter
+prefix: /Users/kristinapavlovska/Desktop/DS_ML/ML-journey/Project3/env
